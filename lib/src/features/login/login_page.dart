@@ -2,10 +2,8 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:store_challenge/src/features/login/login_model.dart';
 import 'package:store_challenge/src/shared/widgets/custom_button.dart';
 import 'package:store_challenge/src/shared/widgets/custom_field.dart';
-import 'package:store_challenge/src/shared/services/shared_local_storage_service.dart';
 
 import 'controllers/login_controller.dart';
 
@@ -33,7 +31,7 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
       if (value) {
         try {
           Modular.to
-              .pushNamed('/login/teste')
+              .pushNamed('/login/test')
               .then((_) => loading(false))
               .catchError((error) {
             log('[erro] modular');

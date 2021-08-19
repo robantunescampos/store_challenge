@@ -1,4 +1,3 @@
-import 'package:flutter_modular/flutter_modular.dart';
 import 'package:store_challenge/src/shared/auth/auth_interface.dart';
 
 class LoginController {
