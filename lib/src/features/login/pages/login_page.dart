@@ -5,7 +5,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:store_challenge/src/shared/widgets/custom_button.dart';
 import 'package:store_challenge/src/shared/widgets/custom_field.dart';
 
-import 'controllers/login_controller.dart';
+import '../controllers/login_controller.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -31,7 +31,7 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
       if (value) {
         try {
           Modular.to
-              .pushNamed('/login/test')
+              .pushReplacementNamed('/home')
               .then((_) => loading(false))
               .catchError((error) {
             log('[erro] modular');
@@ -104,6 +104,7 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
 
                               if (isAuthenticated) {
                                 print('Próxima tela');
+                                Modular.to.pushReplacementNamed('/home');
                               } else {
                                 print('credenciais inválidas');
                               }
